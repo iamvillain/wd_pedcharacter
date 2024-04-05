@@ -6,14 +6,15 @@ RegisterNetEvent('RSGCore:Client:OnPlayerLoaded', function()
 end)
 
 RegisterNetEvent('wd_pedcharacter:client:applyPedModel', function(model)
-    local modelHash = GetHashKey(model)
+	local modelHash = GetHashKey(model)
     RequestModel(modelHash)
     while not HasModelLoaded(modelHash) do
         Citizen.Wait(0)
     end
     SetPlayerModel(PlayerId(), modelHash, true)
-    SetRandomOutfitVariation(PlayerId(), true
+    SetRandomOutfitVariation(PlayerId(), true)
     SetModelAsNoLongerNeeded(modelHash)
+
 end)
 
 local function spawnPedMenu()
